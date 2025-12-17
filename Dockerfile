@@ -12,7 +12,7 @@ RUN pip install --upgrade pip \
 
 COPY . .
 
-RUN apt-get update && apt-get install -y libaio1 unzip curl
+RUN apt-get update && apt-get install -y libaio-dev unzip curl
 
 RUN mkdir -p /app/oracle_wallet
 COPY cwallet.sso /app/oracle_wallet/
