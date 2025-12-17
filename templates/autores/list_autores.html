@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Lista de Autores - {{ block.super }}
+{% endblock %}
+
+{% block body %}
+  <br />
+    <a class="quick-btn" href="{% url 'autores:add_autor' %}"><span class="material-symbols-outlined">addperson</span>Adicionar novo Autor</a>
+  <br />
+  <br />
+  <b>Lista de autores</b>
+  <br />
+  <br />
+  <table border="1">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Idade</th>
+        <th scope="col">Foto</th>
+        <th scope="col">--</th>
+        <th scope="col">--</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for autor in autores %}
+        <tr>
+          <th>{{ autor.id }}</th>
+          <td>{{ autor.name }}</td>
+          <td>{{ autor.age }}</td>
+          <td>
+              <img src="{{ autor.photo.url }}" width="50" height="50">
+          </td>
+          <td>
+            <a href="{% url 'autores:edit_autor' autor.id %}">Editar</a>
+          </td>
+          <td>
+            <a href="{% url 'autores:delete_autor' autor.id %}" >Excluir</a>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
