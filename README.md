@@ -1,7 +1,13 @@
 ## biblioApp-django-app
 Django application for the biblioApp project with Oracle Database integration and an admin-oriented interface 
 
-## Diagrama de Classes
+---
+
+## Deployed with Render at 🔗 https://biblioapp-django-app.onrender.com
+
+---
+
+# Class Diagram
 ```mermaid
 classDiagram
   class Autor {
@@ -59,3 +65,4 @@ classDiagram
   Livro "1" o--> "*" ItemEmprestimo
 
   Emprestimo "1" o--> "*" ItemEmprestimo
+
