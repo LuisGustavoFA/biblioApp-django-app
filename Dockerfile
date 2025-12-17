@@ -14,4 +14,6 @@ COPY . .
 
 EXPOSE 8000
 
+RUN python manage.py collectstatic --noinput
+
 CMD ["gunicorn", "bibliotecaapp.wsgi:application", "--bind", "0.0.0.0:8000"]
