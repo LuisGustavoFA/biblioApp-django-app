@@ -13,6 +13,7 @@ import os
 import sys 
 from pathlib import Path
 from decouple import config
+import oracledb
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 # BASE_DIR = Path(__file__).resolve().parent.parent
@@ -96,12 +97,18 @@ WSGI_APPLICATION = 'bibliotecaapp.wsgi.application'
 #     }
 # }
 
+oracledb.init_oracle_client(lib_dir="/app/oracle_wallet")
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.oracle',
          'NAME': config('DB_NAME'),
          'USER': config('DB_USER'),
          'PASSWORD': config('DB_PASSWORD'),   
+         'OPTIONS': {
+            'encoding': 'UTF-8',
+            'timeout': 10 
+        }
     }
 }
 
