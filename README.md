@@ -1,6 +1,5 @@
-# 2025-1-A3-UDWMJ-FAPA-05
-## Projeto A3
-Aplicativo em Django com o tema 'Biblioteca'.
+## biblioApp-django-app
+Django application for the biblioApp project with Oracle Database integration and an admin-oriented interface 
 
 ## Diagrama de Classes
 ```mermaid
@@ -58,4 +57,5 @@ classDiagram
   Editora "1" o--> "*" Livro
   Cliente "1" o--> "*" Emprestimo
   Livro "1" o--> "*" ItemEmprestimo
+
   Emprestimo "1" o--> "*" ItemEmprestimo
