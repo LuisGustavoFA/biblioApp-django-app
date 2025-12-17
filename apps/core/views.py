@@ -9,7 +9,7 @@ def home(request):
     context = {}
     return render(request, template_name, context)
 
-def my_ip():
+def my_ip(request):
     try:
         import requests
         ip = requests.get('https://api.ipify.org', timeout=5).text
