@@ -97,8 +97,6 @@ WSGI_APPLICATION = 'bibliotecaapp.wsgi.application'
 #     }
 # }
 
-oracledb.init_oracle_client(lib_dir="/app/oracle_wallet")
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.oracle',
