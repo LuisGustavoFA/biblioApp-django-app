@@ -10,5 +10,9 @@ def home(request):
     return render(request, template_name, context)
 
 def my_ip():
-    ip = requests.get('https://api.ipify.org').text
+    try:
+        import requests
+        ip = requests.get('https://api.ipify.org', timeout=5).text
+    except Exception as e:
+        ip = f"Erro: {e}"
     return HttpResponse(f"Meu IP público: {ip}")
