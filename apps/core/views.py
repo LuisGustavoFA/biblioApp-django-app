@@ -9,6 +9,6 @@ def home(request):
     context = {}
     return render(request, template_name, context)
 
-def my_ip(request):
+def my_ip():
     ip = requests.get('https://api.ipify.org').text
     return HttpResponse(f"Meu IP público: {ip}")
